@@ -20,7 +20,7 @@ const createAndSavePerson = (done) => {
   const raizRazer = new Person({
     name: "Raiz Razer",
     age: 25,
-    favoriteFoods: ["biriyani,mandi,broast"],
+    favoriteFoods: ["biriyani", "mandi", "broast"],
   });
 
   raizRazer.save((err, data) => {
@@ -29,7 +29,29 @@ const createAndSavePerson = (done) => {
   });
 };
 
+const arrayOfPeople = [
+  {
+    name: " Irjade Birjade",
+    age: 18,
+    favoriteFoods: ["mandi", "biriyani", "alfahm"],
+  },
+  {
+    name: "poorGuy Fanu",
+    age: 25,
+    favoriteFoods: ["biriyani", "mandi", "broast"],
+  },
+  {
+    name: "Monkie Boy",
+    age: 25,
+    favoriteFoods: ["pazhampori", "chicken fry", "sour candy"],
+  },
+];
+
 const createManyPeople = (arrayOfPeople, done) => {
+  Person.create(arrayOfPeople, (err, done) => {
+    if (err) return console.log(err);
+    done(null, data);
+  });
   done(null /*, data*/);
 };
 

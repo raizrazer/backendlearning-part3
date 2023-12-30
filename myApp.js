@@ -55,7 +55,7 @@ const createManyPeople = (arrayOfPeople, done) => {
 };
 
 const findPeopleByName = (personName, done) => {
-  Person.find({ name: "Raiz Razer" }, (err, personFound) => {
+  Person.find({ name: personName }, (err, personFound) => {
     if (err) return console.log(err);
     done(null, personFound);
   });
